@@ -3,7 +3,7 @@
 ## when the input matrix is very large.
 ## The basic idea is to store the inverse matrix when it is calculated at the first time,
 ## and use the store values when the inverse matrix is required under the condition
-## that the input matrix is not changed.
+## that the input matrix remains unchanged.
 
 
 ## The makeCacheMatrix function is a list of four functions
