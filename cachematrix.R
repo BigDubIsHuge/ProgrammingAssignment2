@@ -2,7 +2,7 @@
 ## Calculating the inverse matrix can be computational expensive, especially
 ## when the input matrix is very large.
 ## The basic idea is to store the inverse matrix when it is calculated at the first time,
-## and use the store values when the inverse matrix is required under the condition
+## and use the stored matrix when the inverse matrix is required under the condition
 ## that the input matrix remains unchanged.
 
 
@@ -11,7 +11,7 @@
 ## to get the inverse matrix,
 ## to set the matrix,
 ## and to set the inverse matrix.
-## It is noted that these functions are not used if the input matrix is a singular or non-square matrix.
+## It is noted that these functions are not used if the input matrix is singular or non-square.
 makeCacheMatrix <- function (x=matrix()){
 		if(ncol(x)!=nrow(x)){
 		print("Please enter a sqaure matrix, and then run the makeCacheMatrix function again")
@@ -33,8 +33,8 @@ makeCacheMatrix <- function (x=matrix()){
 }
 
 ## The following function calculates the inverse of the matrix created with the function above.
-## The cached inverse matrix, if there is one, will be used, and no additional calculations are required.
-## Otherwise, the inverse matrix will be calculated and stored as a cached inverse matrix.
+## The cached inverse matrix, if there is one, will be used and no additional calculations are required.
+## Otherwise, the inverse matrix will be calculated and stored as the cached inverse matrix.
 ## It needs to note that the cached inverse matrix becomes NULL if the input matrix is changed.
 cacheSolve <- function(x, ...){
 	im <- x$getinverse()
